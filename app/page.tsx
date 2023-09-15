@@ -1,8 +1,12 @@
-'use client'
+"use client";
 
-import line from "./assets/images/line.png";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import MouseAnimation from './components/mouseanim'
+import icon from "./assets/svg/icon.svg";
+import line from "./assets/images/line.png";
+import profilepic from "./assets/images/joaohall.png"
 
 export default function Home() {
   const [scrolling, setScrolling] = useState(false);
@@ -15,43 +19,61 @@ export default function Home() {
         setScrolling(false);
       }
     };
-    console.log(scrolling)
-    window.addEventListener('scroll', handleScroll);
+    console.log(scrolling);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
-    <main className="max-w-[1440px] m-auto">
+    <main className="m-auto">
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
       />
-        <nav className="flex row justify-between fixed w-full p-10 max-w-[1440px] m-auto transition-transform ">
-          <Image src={""} alt="" />
-          <div className="flex gap-10 items-center">
-            <a href="#">Sobre mim</a>
-            <a href="#">Experiência</a>
-            <a href="#">Trabalhos</a>
-            <button className="bg-blue-900 px-5 p-2 rounded-xl hover:bg-slate-950 transition-all">
-              Contratar
-            </button>
-          </div>
-        </nav>
-      <section className="flex min-h-screen flex-col p-10 justify-center">
-        <div className="h-full items-center">
-          <h1 className="text-4xl font-bold">Eu sou o João Eduardo</h1>
-          <p>Desenolvedor FullStack Python e JavaScript</p>
+      <nav className="flex row justify-between fixed w-full p-10 max-w-[1440px] m-auto left-0 right-0">
+        <Image src={icon} width={35} alt="" />
+        <div className="flex gap-10 items-center">
+          <a href="#">Sobre mim</a>
+          <a href="#">Experiência</a>
+          <a href="#">Trabalhos</a>
+          <button className="bg-blue-900 px-5 p-2 rounded-xl hover:bg-slate-950 transition-all">
+            Contratar
+          </button>
         </div>
-      </section>
+      </nav>
+      <div>
+        <section className=" ">
+          <div className="flex min-h-screen flex-col justify-center max-w-[1440px] m-auto">
+            <div className="flex flex-row items-center gap-28 justify-between">
+              <div className="h-full items-center ">
+                <h1 className="text-5xl font-bold">Eu sou o João Eduardo</h1>
+                <p className="text-3xl text-gray-400">O seu próximo desenvolvedor.</p>
+                <div className="flex flex-row gap-10 mt-5">
+                  <button className="p-2 px-5 bg-blue-900 rounded-xl">Meu CV</button>
+                  <button className="p-2 px-5 bg-blue-900 rounded-xl">Ver projetos</button>
+                </div>
+              </div>
+              <div>
+                <Image
+                className="rounded-full"
+                alt="teste"
+                src={profilepic}
+                width={450}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
       <section className="flex min-h-screen flex-col justify-between p-10">
         <h2>teste</h2>
       </section>
       <footer className="p-10 px-52 flex justify-center bg-neutral-900">
         <div className="w-1/4">
           <h1>Entre em contato!</h1>
-          <Image></Image>
+          <Image src={""} alt={""}></Image>
         </div>
         <div className="flex row gap-5">
           <Image
@@ -76,10 +98,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
       </footer>
     </main>
   );
 }
-
-

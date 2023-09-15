@@ -1,11 +1,11 @@
-import './globals.css'
+import '../../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'João Eduardo',
+  title: 'Projects Page',
   description: 'Bem vindo ao portfólio do seu novo programador, João Eduardo',
 }
 

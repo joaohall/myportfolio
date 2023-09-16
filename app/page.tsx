@@ -79,6 +79,7 @@ export default function Home(){
       {
         (isMobile) ? <NavigationHamburguer/> : <NavigationBar/>
       }
+      <p>{String(isMobile)}</p>
       <WelcomeSection/>
       <ExperienceSection/>
     </main>

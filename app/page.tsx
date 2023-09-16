@@ -52,22 +52,19 @@ function NavigationHamburguer(){
 }
 
 export default function Home(){
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight,
-  ]);
   const [isMobile, setIsMobile] = useState(false)
 
   //Window size getter and navbar hide
 
   useEffect(() => {
+
+    
     const handleWindowResize = () => {
       if(window.innerWidth < 769){
         setIsMobile(true)
       }else if(window.innerWidth > 768){
         setIsMobile(false);
       }
-      setWindowSize([window.innerWidth, window.innerHeight]);
     };
 
     window.addEventListener('resize', handleWindowResize);

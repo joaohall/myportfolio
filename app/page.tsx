@@ -52,8 +52,8 @@ function NavigationHamburguer(){
 }
 
 export default function Home(){
-  const [isMobile, setIsMobile] = useState(false)
-
+  const [isMobile, setIsMobile] = useState(true)
+  const [resolution, setResolution] = useState(0)
   //Window size getter and navbar hide
 
   useEffect(() => {
@@ -62,8 +62,10 @@ export default function Home(){
     const handleWindowResize = () => {
       if(window.innerWidth < 769){
         setIsMobile(true)
+        setResolution(window.innerHeight)
       }else if(window.innerWidth > 768){
         setIsMobile(false);
+        setResolution(window.innerHeight)
       }
     };
 
@@ -79,7 +81,7 @@ export default function Home(){
       {
         (isMobile) ? <NavigationHamburguer/> : <NavigationBar/>
       }
-      <p>{String(isMobile)}</p>
+      <p>{String(isMobile)}{String(resolution)}</p>
       <WelcomeSection/>
       <ExperienceSection/>
     </main>

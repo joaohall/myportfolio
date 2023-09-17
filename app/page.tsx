@@ -62,10 +62,10 @@ export default function Home(){
     const handleWindowResize = () => {
       if(window.innerWidth < 769){
         setIsMobile(true)
-        setResolution(window.innerHeight)
+        setResolution(window.innerWidth)
       }else if(window.innerWidth > 768){
         setIsMobile(false);
-        setResolution(window.innerHeight)
+        setResolution(window.innerWidth)
       }
     };
 

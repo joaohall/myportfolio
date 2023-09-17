@@ -26,7 +26,7 @@ function ExperienceSection(){
 
 function NavigationBar(){
   return(
-    <div className="flex justify-center m-auto">
+    <div className="sm:flex hidden justify-center m-auto">
       <nav className="flex flex-row p-8 gap-8 fixed justify-between items-center w-full max-w-[1440px]">
         <Image src={icon} width={30} alt='' />
         <div className="flex flex-row gap-12">
@@ -42,7 +42,7 @@ function NavigationBar(){
 
 function NavigationHamburguer(){
     return(
-     <div className='fixed flex flex-row w-full p-8 justify-between' >
+     <div className='fixed sm:hidden flex flex-row w-full p-8 justify-between ' >
        <Image src={icon} width={30} alt='' />
        <button>
         <Image src={hamburguerIcon} alt='icon' width={30} height={50}/>
@@ -51,37 +51,20 @@ function NavigationHamburguer(){
     )
 }
 
+function Navigators(){
+  return(
+    <div>
+      <NavigationHamburguer/>
+      <NavigationBar/>
+    </div>
+  )
+}
+
 export default function Home(){
-  const [isMobile, setIsMobile] = useState(true)
-  const [resolution, setResolution] = useState(0)
-  //Window size getter and navbar hide
-
-  useEffect(() => {
-
-    
-    const handleWindowResize = () => {
-      if(window.innerWidth < 769){
-        setIsMobile(true)
-        setResolution(window.innerWidth)
-      }else if(window.innerWidth > 768){
-        setIsMobile(false);
-        setResolution(window.innerWidth)
-      }
-    };
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
 
     return(
     <main>
-      {
-        (isMobile) ? <NavigationHamburguer/> : <NavigationBar/>
-      }
-      <p>{String(isMobile)}{String(resolution)}</p>
+      <Navigators/>
       <WelcomeSection/>
       <ExperienceSection/>
     </main>

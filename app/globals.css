@@ -110,5 +110,20 @@ body {
 }
 .text-close{
   animation: textclose 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
 
+@keyframes slideleft {
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+.to-left{
+  animation: slideleft 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  animation-delay: 0.5s;
 }

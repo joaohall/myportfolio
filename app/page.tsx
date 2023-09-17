@@ -16,14 +16,14 @@ export default function Home() {
   function WelcomeSection() {
     return <section className="h-screen p-24 overflow-hidden ">
         <div className="absolute z-0">
-          <Image src={profilewallpaper} width={100}/>
+          <Image alt="test" src={profilewallpaper} width={100}/>
         </div>
       <div className="h-full max-w-[1440px] justify-end m-auto flex flex-col">
         <div className="z-10">
           <h1 className="text-6xl font-bold">Eu sou o João Eduardo</h1>
           <p className="text-2xl mb-7">O seu próximo desenvolvedor </p>
           <div className="flex gap-10">
-            <button className="p-2 px-6 bg-blue-600 rounded-xl hover:tracking-widest transition-all hover:space-x-9">Ver projetos <span> > </span></button>
+            <button className="p-2 px-6 bg-blue-600 rounded-xl hover:tracking-widest transition-all hover:space-x-9">Ver projetos <span> &gt </span></button>
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ export default function Home() {
 
   function NavigationHamburguer() {
     return (
-      <div className="fixed sm:hidden flex flex-row w-full p-8 justify-between z-20 ">
+      <div className="fixed sm:hidden flex flex-row w-full p-8 justify-between z-20 base-animation">
         <Image src={icon} width={30} alt="" />
         <button
           onClick={() => {
@@ -55,15 +55,18 @@ export default function Home() {
   }
   function HamburguerMenu(){
     return(
-        <div className={`h-screen w-screen bg-blue-900 bg-opacity-50 fixed z-20 flex flex-col 
-          justify-center transition-all ease-in duration-300 
-          ${pressed? 'opacity-100 top-0 duration-300 ' : 'opacity-0 top-40 duration-300 '} 
-          text-3xl font-bold items-center gap-16`}>
-        <a href="#">Início</a>
-        <a href="#">Experiência</a>
-        <a href="#">Blog</a>
-        <a href="#">Projetos</a>
-      </div>
+      <div
+      className={`fixed top-0 left-0 w-full h-full z-10 bg-blue-900 flex items-center p-4 justify-center ${
+        pressed ? 'menu-close' : ' menu-open'
+      }`}
+    >      
+      <ul className={`text-3xl font-bold flex flex-col gap-20 text-center `}>
+        <li className={`opacity-0 ${pressed?'text-close':'text-open-1 animation-delay-300'}`}>Início</li>
+        <li className={`opacity-0 ${pressed?'text-close':'text-open-2 animation-delay-400'}`}>Experiência</li>
+        <li className={`opacity-0 ${pressed?'text-close':'text-open-3 animation-delay-500'}`}>Blog</li>
+        <li className={`opacity-0 ${pressed?'text-close':'text-open-4 animation-delay-600'}`}>Projetos</li>
+      </ul>
+    </div>
     )
   }
 

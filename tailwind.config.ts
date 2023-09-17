@@ -15,6 +15,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animation-delay"),
+  ],
 }
 export default config

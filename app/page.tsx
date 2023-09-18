@@ -11,8 +11,8 @@ const seta = '>'
 
 function WelcomeSection() {
   return (
-    <section className="h-screen p-24 overflow-hidden">
-      <div className="h-full max-w-[1440px] justify-end md:items-start items-center m-auto flex flex-col relative z-10">
+    <section className="h-screen md:p-24 p-12 overflow-hidden">
+      <div className="h-full max-w-[1440px] md:justify-end md:items-start items-center justify-center m-auto flex flex-col relative z-10">
         <div className="to-left opacity-0 md:text-left text-center z-10 items-center ">
           <h1 className="md:text-6xl text-5xl font-bold">Eu sou o João Eduardo</h1>
           <p className="md:text-2xl text-1xl  mb-7">O seu próximo desenvolvedor </p>

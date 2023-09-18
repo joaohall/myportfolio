@@ -26,7 +26,7 @@ function WelcomeSection() {
 
       <div className=" absolute h-full w-full top-0 right-0">
         <div className="bg-gradient-animation h-full w-full">
-          <Image src={wallpaper} className="-z-30 bg-animation" layout="fill" objectFit="cover" alt="" />
+          <Image src={wallpaper} priority={true} className="-z-30 bg-animation" layout="fill" objectFit="cover" alt="" />
         </div>
       </div>
     </section>

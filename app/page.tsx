@@ -9,32 +9,33 @@ import wallpaper from './assets/images/wallpaper.png'
 
 const seta = '>'
 
+function WelcomeSection() {
+  return (
+    <section className="h-screen p-24 overflow-hidden">
+      <div className="h-full max-w-[1440px] justify-end md:items-start items-center m-auto flex flex-col relative z-10">
+        <div className="to-left opacity-0 md:text-left text-center z-10 items-center ">
+          <h1 className="md:text-6xl text-5xl font-bold">Eu sou o João Eduardo</h1>
+          <p className="md:text-2xl text-1xl  mb-7">O seu próximo desenvolvedor </p>
+          <div className="flex gap-10 md:justify-start justify-center">
+            <button className="p-2 px-6 bg-blue-600 md:text-white rounded-xl hover:tracking-widest transition-all hover:space-x-9 ">
+              Ver projetos <span>{seta}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className=" absolute h-full w-full top-0 right-0">
+        <div className="bg-gradient-animation h-full w-full">
+          <Image src={wallpaper} className="-z-30 bg-animation" layout="fill" objectFit="cover" alt="" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [pressed, setPressed] = useState(false);
 
-  function WelcomeSection() {
-    return (
-      <section className="h-screen p-24 overflow-hidden">
-        <div className="h-full max-w-[1440px] justify-end m-auto flex flex-col relative z-10">
-          <div className="relative to-left opacity-0 z-10 ">
-            <h1 className="text-6xl font-bold">Eu sou o João Eduardo</h1>
-            <p className="text-2xl mb-7">O seu próximo desenvolvedor </p>
-            <div className="flex gap-10">
-              <button className="p-2 px-6 bg-blue-600 rounded-xl hover:tracking-widest transition-all hover:space-x-9 ">
-                Ver projetos <span>{seta}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className=" absolute h-full w-full top-0 right-0">
-          <div  className="bg-gradient-animation h-full w-full">
-            <Image src={wallpaper} className="-z-30 bg-animation" layout="fill" objectFit="cover" alt="" />
-          </div>
-        </div>
-      </section>
-    );
-  }
   
   function ExperienceSection() {
     return <section className="h-screen">

@@ -37,9 +37,11 @@ export default function Home() {
 
   
   function ExperienceSection() {
-    return <section className="h-screen">
-      
-    </section>;
+    return(
+    <section className="h-screen">
+      <div></div>  
+    </section>
+    )
   }
   function NavigationBar() {
     return (

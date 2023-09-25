@@ -52,9 +52,8 @@ export function About(){
         <section className="h-screen max-w-[1920px] flex justify-between">
             <Geral/>
             <div className="w-1/3 bg-white h-full overflow-hidden relative">
-  <Image src="/jipphoto.jpg" width={50} height={5o} className="w-full h-full object-cover absolute inset-0" />
-</div>
-
+                <Image src="/jipphoto.jpg" width={50} height={50} alt="" className="w-full h-full object-cover absolute inset-0" />
+            </div>
         </section>
     )
 }

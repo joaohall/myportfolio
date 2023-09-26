@@ -1,4 +1,4 @@
-import { Wellcome, About } from "./components/sections"
+import { Wellcome, About, Stack } from "./components/sections"
 import { Navbar } from "./components/navbar"
 
 export default function App(){
@@ -7,6 +7,7 @@ export default function App(){
       <Navbar/>
       <Wellcome/>
       <About/>
+      <Stack/>
     </div> 
   )
 }

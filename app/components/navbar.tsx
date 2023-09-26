@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export function Navbar(){
     return(
-        <nav className="fixed text-base flex flex-row justify-between w-full p-12">
+        <nav className="fixed text-base flex flex-row justify-between w-full p-12 z-10">
            <Image src={'/'} alt="#" width={10} height={10}/>
            <div className="gap-14 flex">
                 <Link href={'#'}>Sobre</Link>

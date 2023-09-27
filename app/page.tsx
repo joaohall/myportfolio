@@ -1,5 +1,7 @@
-import { Wellcome, About, Stack } from "./components/sections"
+import { Wellcome, Stack } from "./components/sections"
 import { Navbar } from "./components/navbar"
+import About from "./components/imageslider"
+
 
 export default function App(){
   return(

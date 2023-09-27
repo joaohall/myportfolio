@@ -11,6 +11,15 @@ const config: Config = {
       'inter': ['inter', 'sans-serif']
     },
     extend: {
+      keyframes: {
+        slidedown: {
+          '0%': { transform: 'translateY(-3rem)', opacity: '0'},
+          '100%': { transform: 'translateY(0rem)', opacity: '1'},
+        },
+      },
+      animation: {
+        slidedown: 'slidedown 1s  cubic-bezier(0.075, 0.82, 0.165, 1)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

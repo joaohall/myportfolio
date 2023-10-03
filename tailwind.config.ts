@@ -10,9 +10,11 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-color-opacity': 'rgba(0, 85, 255, 0.57)'
+      },
+      boxShadow: {
+        'glow': '0px 0px 60px 20px #014389',
       },
     },
   },

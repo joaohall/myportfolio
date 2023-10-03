@@ -6,6 +6,8 @@ export default function Home() {
     <main>
       <Navbar/>
       <Welcome/>
+      <Welcome/>
+      <Welcome/>
     </main>
   )
 }

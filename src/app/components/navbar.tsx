@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion, useAnimation, useAnimationControls, cubicBezier  } from "framer-motion";
+import { motion, useAnimation, useAnimationControls, cubicBezier, color  } from "framer-motion";
 
 
 export default function Navbar() {
@@ -26,7 +26,7 @@ export default function Navbar() {
     updateSize();
     return () => window.removeEventListener('resize', updateSize);
   })
- if(windowres < 723){
+ if(windowres < 768){
     return(
       <div>
         <motion.div 
@@ -37,7 +37,7 @@ export default function Navbar() {
           ease: pressed ? 'easeIn' : 'easeOut',
           delay:0
         }}
-        className="absolute w-screen h-full bg-blue-600 bg-opacity-40 text-4xl font-bold p-12 gap-5 flex-col justify-end items-start text-left  ">
+        className="w-screen fixed h-full bg-blue-600 bg-opacity-40 text-4xl font-bold p-12 gap-5 flex-col justify-end items-start text-left  ">
           <motion.button
                   initial={{  opacity:0}} 
                   animate={animationControllerButton}
@@ -109,15 +109,28 @@ export default function Navbar() {
     )
   }else{
       return(
-        <nav className="flex flex-row justify-center items-center mt-5 fixed w-full">
-          <div className="backdrop-blur-sm flex flex-row p-3 items-center rounded-xl border-[1px] border-white/10 gap-36 ">
+        <nav className="flex flex-row justify-center items-center mt-5 fixed w-full z-20">
+          <motion.div 
+          initial={{ pathLength: 0, opacity:0 }}
+          animate={{ pathLength: 1, opacity:1 }}
+          transition={{duration: 0.5, delay:0, ease: 'easeInOut'}}
+
+            className="backdrop-blur-md flex flex-row p-3 items-center rounded-xl border-[1px] bg-slate-500 bg-opacity-20  border-white/20 gap-36 ">
             <div className="space-x-2">
-              <button className="hover:scale-105 px-4 rounded transition-all duration-300 mix-blend-difference">
+              <motion.button 
+              initial={{ opacity:0, translateY:-20 }}
+              animate={{ opacity:1, translateY:0 }}
+              transition={{duration: 0.5, delay:0.4, ease: 'easeInOut'}}
+              className="hover:scale-105 px-4 rounded transition-all duration-300 mix-blend-difference">
                 Início
-              </button>
-              <button className="hover:scale-105  px-4 rounded transition-all duration-300 mix-blend-difference">
+              </motion.button>
+              <motion.button 
+              initial={{ opacity:0, translateY:-20 }}
+              animate={{ opacity:1, translateY:0 }}
+              transition={{duration: 0.5, delay:0.8, ease: 'easeInOut'}}
+              className="hover:scale-105  px-4 rounded transition-all duration-300 mix-blend-difference">
                 Sobre
-              </button>
+              </motion.button>
             </div>
             <svg
               width="26"
@@ -135,14 +148,22 @@ export default function Navbar() {
               />
             </svg>
             <div className="space-x-2">
-              <button className="hover:scale-105  p-2 px-4 rounded transition-all duration-300 mix-blend-difference">
+              <motion.button
+              initial={{ opacity:0, translateY:-20 }}
+              animate={{ opacity:1, translateY:0 }}
+              transition={{duration: 0.5, delay:1.2, ease: 'easeInOut'}}
+              className="hover:scale-105  p-2 px-4 rounded transition-all duration-300 mix-blend-difference">
                 Projetos
-              </button>
-              <button className="hover:scale-105  p-2 px-4 rounded transition-all duration-300 mix-blend-difference">
+              </motion.button>
+              <motion.button
+              initial={{ opacity:0, translateY:-20 }}
+              animate={{ opacity:1, translateY:0 }}
+              transition={{duration: 0.5, delay:1.4, ease: 'easeInOut'}}
+              className="hover:scale-105  p-2 px-4 rounded transition-all duration-300 mix-blend-difference">
                 Contato
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </nav>
       );
     }

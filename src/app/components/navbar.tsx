@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion, useAnimation, useAnimationControls  } from "framer-motion";
+import { motion, useAnimation, useAnimationControls, cubicBezier  } from "framer-motion";
 
 
 export default function Navbar() {
@@ -74,6 +74,7 @@ export default function Navbar() {
         <nav className="flex flex-row items-center mt-5 fixed w-full justify-between px-12 py-5">
           <div>
             <svg
+            
                 width="26"
                 height="24"
                 className="hover:scale-110 transition-all mix-blend-difference"
@@ -81,7 +82,10 @@ export default function Navbar() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
+                <motion.path
+                  initial={{ pathLength: 0, opacity:0 }}
+                  animate={{ pathLength: 1, opacity:1 }}
+                  transition={{duration: 1, delay:0, yoyo: Infinity, ease: cubicBezier(0.99,0.01,0.11,0.99)}}
                   d="M7 15C7 19.0019 10 21 15.208 20.998C20 20.9963 23 19 23 15V3H3"
                   stroke="white"
                   strokeWidth="4"
@@ -92,8 +96,12 @@ export default function Navbar() {
           <div>
             <button onClick={()=>{setPressed(!pressed)}}>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="white" viewBox="0 -960 960 960" width="24">
-                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-                </svg>
+                <motion.path 
+                initial={{ pathLength: 0, opacity:0 }}
+                animate={{ pathLength: 1, opacity:1 }}
+                transition={{duration: 1, delay:0, yoyo: Infinity, ease: cubicBezier(0.99,0.01,0.11,0.99)}}
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+              </svg>
             </button>
           </div>
       </nav>

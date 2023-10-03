@@ -1,11 +1,11 @@
 import Navbar from "./components/navbar"
-import About from "./pages/about"
+import Welcome from "./pages/welcome"
 
 export default function Home() {
   return (
     <main>
       <Navbar/>
-      <About/>
+      <Welcome/>
     </main>
   )
 }

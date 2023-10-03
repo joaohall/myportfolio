@@ -37,7 +37,7 @@ export default function Navbar() {
           ease: pressed ? 'easeIn' : 'easeOut',
           delay:0
         }}
-        className="absolute w-screen h-screen bg-blue-600 bg-opacity-40 text-4xl font-bold p-12 gap-5 flex-col justify-end items-start text-left  ">
+        className="absolute w-screen h-full bg-blue-600 bg-opacity-40 text-4xl font-bold p-12 gap-5 flex-col justify-end items-start text-left  ">
           <motion.button
                   initial={{  opacity:0}} 
                   animate={animationControllerButton}

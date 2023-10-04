@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Background from '../../../public/_DSC0176.jpg'
 
 export default function Welcome() {
   return (
@@ -26,12 +27,13 @@ export default function Welcome() {
       >
         <div>
             <Image
-                src="/_DSC0176.jpg"
+                src={Background}
                 layout="fill"
                 objectFit="cover"
                 quality={100}
                 alt=""
                 className="-z-10 opacity-25 hidden md:flex"
+                priority
             />
         </div>
         <div className=" h-full justify-center items-center md:justify-end font-bold flex flex-col text-2xl text-center gap-5 md:text-5xl md:text-left md:items-start ">
@@ -42,7 +44,7 @@ export default function Welcome() {
               Desenvolvedor <span className="text-blue-400">Full Stack</span>
             </span>
           </h1>
-          <p className="font-normal md:text-left text-lg text-center mx-10 md:mx-0 opacity-60 md:w-2/3 lg:w-1/2 md:text-base ">
+          <p className="font-normal md:text-left text-lg text-center mx-0 md:mx-0 opacity-60 md:w-2/3 lg:w-1/2 md:text-base ">
             Desenvolvedor com 2 anos de experiência em desenvolvimento web e
             mobile, pronto para resolver os seus problemas.
           </p>

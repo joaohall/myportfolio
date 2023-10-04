@@ -14,7 +14,7 @@ const config: Config = {
         'gradient-color-opacity': 'rgba(0, 85, 255, 0.57)'
       },
       boxShadow: {
-        'glow': '0px 0px 60px 20px #014389',
+        'glow': '0px 0px 30px -10px #ffffff',
       },
     },
   },

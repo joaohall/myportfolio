@@ -144,6 +144,7 @@ export default function Navbar() {
                   initial={{ pathLength: 0, opacity:0 }}
                   animate={{ pathLength: 1, opacity:1 }}
                   transition={{duration: 1, delay:0, yoyo: Infinity, ease: cubicBezier(0.99,0.01,0.11,0.99)}}
+
                 d="M7 15C7 19.0019 10 21 15.208 20.998C20 20.9963 23 19 23 15V3H3"
                 stroke="white"
                 strokeWidth="4"

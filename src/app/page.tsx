@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar"
 import Welcome from "./pages/welcome"
 import Loading from "./components/loadinganimation"
+import About from "./pages/about"
 
 export default function Home() {
   return (
@@ -8,8 +9,7 @@ export default function Home() {
       <Loading/>
       <Navbar/>
       <Welcome/>
-      <Welcome/>
-      <Welcome/>
+      <About/>
     </main>
   )
 }

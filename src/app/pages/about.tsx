@@ -105,7 +105,7 @@ export default function About() {
           </button>
         </div>
         <div className="h-screen flex flex-col justify-between p-12 ">
-        <h1 className="self-start opacity-60 text-2xl mt-14">Sobre mim</h1>
+        <h1 className="self-start opacity-60 text-2xl mt-14"></h1>
           <p className="text-base  sm:text-lg">
             {textos[index]}
           </p>

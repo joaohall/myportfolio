@@ -19,6 +19,8 @@ import image4 from "../../../public/image4.jpeg";
 import Background from "../../../public/_DSC0176.jpg";
 
 export default function About() {
+  const textos = ["Produzo software desde o ensino médio e tive experiências com iniciações científicas e desenvolvimento de produtos móveis durante essa fase. Sempre fui alguém que busca se destacar naquilo que gosta!","Tive experiências na carreira de pesquisa acadêmica e desenvolvimento tecnológico no Instituto Federal de Brasília, o que me auxiliou na organização e liderança de projetos.","Meus trabalhos acadêmicos receberam reconhecimento além da minha instituição de ensino, sendo apresentados em eventos de iniciação científica da UNB e até mesmo em eventos da rede Maker.","Apesar de tudo, estou sempre buscando melhorar minhas experiências e aprendizados, tentando inovar, produzir e resolver todos os tipos de problemas, mesmo que eu não atue necessariamente na área específica desses problemas."]
+
   const images = [image1, image2, image3, image4];
   const [index, setIndex] = useState(0);
   const [windowres, setWindowres] = useState(0);
@@ -36,9 +38,8 @@ export default function About() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Avança para a próxima imagem
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 5000); // Altere o valor 5000 para ajustar a velocidade do carrossel
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images]);
@@ -103,8 +104,11 @@ export default function About() {
             </svg>
           </button>
         </div>
-        <div className="h-screen flex items-end p-12 ">
-          <p className="text-base sm:text-lg"></p>
+        <div className="h-screen flex flex-col justify-between p-12 ">
+        <h1 className="self-start opacity-60 text-2xl mt-14">Sobre mim</h1>
+          <p className="text-base  sm:text-lg">
+            {textos[index]}
+          </p>
         </div>
       </section>
     );

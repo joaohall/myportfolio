@@ -38,7 +38,7 @@ export default function Navbar() {
           ease: pressed ? 'easeIn' : 'easeOut',
           delay:0
         }}
-        className="w-screen fixed h-full bg-blue-600 bg-opacity-40 text-4xl font-bold p-12 gap-5 flex-col justify-end items-start text-left  ">
+        className="w-screen fixed z-50 h-full bg-blue-600 bg-opacity-40 text-4xl font-bold p-12 gap-5 flex-col justify-end items-start text-left  ">
           <motion.button
                   initial={{  opacity:0}} 
                   animate={animationControllerButton}
@@ -72,7 +72,7 @@ export default function Navbar() {
                     delay:0.1
                   }}>Contato</motion.button>
         </motion.div>
-        <nav className="flex flex-row items-center mt-5 fixed w-full justify-between px-12 py-5">
+        <nav className="flex z-50 flex-row items-center mt-5 fixed w-full justify-between px-12 py-5">
           <div>
             <Link href="#">
               <svg

@@ -9,7 +9,6 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import Background from '../../../public/_DSC0176.jpg'
 
 export default function Welcome() {
   return (
@@ -27,7 +26,7 @@ export default function Welcome() {
       >
         <div>
             <Image
-                src={Background}
+                src={'/_DSC0176.jpg'}
                 layout="fill"
                 objectFit="cover"
                 quality={100}

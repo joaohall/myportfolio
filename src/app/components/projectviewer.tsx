@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import React, { useEffect, useRef } from 'react';
-import tilt from 'vanilla-tilt';
+import VanillaTilt from 'vanilla-tilt';
 
 const options = {
     reverse:           false,  // reverse the tilt direction
@@ -23,25 +23,33 @@ const options = {
 
 
 export default function ProjectsViewer(props: any) {
+    
+    interface TiltProps {
+        options:any
+        children:any
+      }
+      
 
-    const ref = React.useRef(null);
-    React.useEffect(() => {
-    const div: HTMLDivElement = ref.current;
-    tilt.init(div);
-    function onTiltChange(e:any) {
-        div.dataset['tiltStartx'] = '50';
-        div.dataset['tiltStarty'] = '50';
-    }
-    div.addEventListener('tiltChange', onTiltChange);
-    // console.log((div as any).vanillaTilt.getValues())
-    return () => {
-        div.removeEventListener('tiltChange', onTiltChange);
-        (div as any).vanillaTilt.destroy(ref.current);
-    };
-    }, []);
-
+    const Tilt: React.FC<TiltProps> = (props) => {
+        const { options, ...rest } = props;
+        const tiltWrapper = useRef<HTMLDivElement | null>(null);
+      
+        useEffect(() => {
+          if (tiltWrapper.current) {
+            VanillaTilt.init(tiltWrapper.current, options);
+          }
+        }, [options]);
+      
+        return (
+          <div ref={tiltWrapper} {...rest} className="w-96 h-96 rounded-xl relative z-10 border-[1px] flex justify-between bg-slate-500 bg-opacity-20 overflow-hidden border-white/20">
+            <div>
+              {props.children}
+            </div>
+          </div>
+        );
+      }
     return (
-            <div ref={ref} className="w-96 h-96 rounded-xl relative z-10 border-[1px] flex justify-between bg-slate-500 bg-opacity-20 overflow-hidden border-white/20">
+            <Tilt options={options}>
                 <div className="absolute -z-10 h-96 w-96 ">
                     <div className="absolute top-0 bottom-0 right-0 left-0">
                         <Image
@@ -59,6 +67,6 @@ export default function ProjectsViewer(props: any) {
                     <h1 className="text-2xl font-bold pb-3">{props.project}</h1>
                     <button className="w-fit h-fit p-2 border-[1px] border-white/20 md:text-md text-sm rounded-lg">Ver projeto</button>
                 </div>
-            </div>
+            </Tilt>
     )
 }

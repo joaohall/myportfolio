@@ -6,7 +6,7 @@ import tilt from 'vanilla-tilt';
 
 const options = {
     reverse:           false,  // reverse the tilt direction
-    max:               10,     // max tilt rotation (degrees)
+    max:               5,     // max tilt rotation (degrees)
     perspective:       1000,   // Transform perspective, the lower the more extreme the tilt gets.
     scale:             1.05,      // 2 = 200%, 1.5 = 150%, etc..
     speed:             300,    // Speed of the enter/exit transition

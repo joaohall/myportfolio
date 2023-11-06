@@ -6,13 +6,13 @@ import ProjectsViewer from "./projectviewer"
 
 export default function Projects() {
     return (
-        <section className="lg:p-12 bg-zinc-900">
+        <section className="p-10 bg-zinc-900">
             <section className="max-w-[1440px] m-auto">
                 <div className="px-16 py-12">
                     <p className="text-2xl text-gray-400">Desenvolvimento</p>
                     <h1 className="text-5xl font-bold">Meus projetos</h1>
                 </div>
-                <div className="flex gap-5 m-10 flex-wrap justify-center">
+                <div className="flex gap-5 flex-wrap justify-center">
                     <ProjectsViewer
                         image={'/anatomical.png'}
                         project={'Anatomical'}

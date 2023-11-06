@@ -10,7 +10,7 @@ export default function Projects() {
             <section className="max-w-[1440px] m-auto">
                 <div className="px-16 py-12">
                     <p className="text-2xl text-gray-400 text-center md:text-end">Desenvolvimento</p>
-                    <h1 className="text-5xl font-bold">Meus projetos</h1>
+                    <h1 className="text-5xl font-bold text-center md:text-end">Meus projetos</h1>
                 </div>
                 <div className="flex flex-wrap justify-center">
                     <ProjectsViewer

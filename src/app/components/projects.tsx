@@ -12,7 +12,7 @@ export default function Projects() {
                     <p className="text-2xl text-gray-400">Desenvolvimento</p>
                     <h1 className="text-5xl font-bold">Meus projetos</h1>
                 </div>
-                <div className="flex gap-5 flex-wrap justify-center">
+                <div className="flex flex-wrap justify-center">
                     <ProjectsViewer
                         image={'/anatomical.png'}
                         project={'Anatomical'}

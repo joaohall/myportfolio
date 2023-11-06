@@ -50,7 +50,7 @@ export default function ProjectsViewer(props: any) {
     }, [options]);
 
     return (
-      <div ref={tiltWrapper} {...rest} className="w-96 h-96 rounded-xl relative z-10 border-[1px] flex justify-between bg-slate-500 bg-opacity-20 overflow-hidden border-white/20">
+      <div ref={tiltWrapper} {...rest} className="w-96 h-96 m-3 rounded-xl relative z-10 border-[1px] flex justify-between bg-slate-500 bg-opacity-20 overflow-hidden border-white/20">
         <div>
           {props.children}
         </div>

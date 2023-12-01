@@ -4,6 +4,7 @@ import Loading from "./components/loadinganimation"
 import Projects from "./components/projects"
 import About from "./components/about"
 import Link from "next/link"
+import Contact from "./components/contactform"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Welcome />
       <About />
       <Projects />
+      <Contact />
     </main>
   )
 }
